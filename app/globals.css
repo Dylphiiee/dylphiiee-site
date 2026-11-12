@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+/* Warna dasar: deep black, putih, abu-abu, dan aksen electric blue. */
+@theme inline {
+  --color-accent: #5b7cff;
+  --font-sans: var(--font-display);
+  --font-mono: var(--font-mono-brand);
+}
+
+:root {
+  --accent: #5b7cff;
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: var(--font-display), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display), system-ui, sans-serif;
+}
+
+/* Hormati preferensi pengguna: matikan smooth scroll dan animasi. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

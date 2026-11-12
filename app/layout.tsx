@@ -1,22 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import localFont from "next/font/local";
+import { Sora, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { profile } from "@/data/profile";
 
-// Font di-host sendiri (file variable dari @fontsource-variable) agar tidak bergantung
-// pada Google Fonts saat build maupun saat runtime.
-const display = localFont({
-  src: "./fonts/sora-latin-wght-normal.woff2",
+const display = Sora({
   variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
-  weight: "100 800",
 });
 
-const mono = localFont({
-  src: "./fonts/jetbrains-mono-latin-wght-normal.woff2",
+const mono = JetBrains_Mono({
   variable: "--font-mono-brand",
+  subsets: ["latin"],
+  weight: ["400", "500"],
   display: "swap",
-  weight: "100 800",
 });
 
 // Ganti dengan domain asli setelah deploy.
